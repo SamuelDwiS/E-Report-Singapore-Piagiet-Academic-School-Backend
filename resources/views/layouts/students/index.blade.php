@@ -11,14 +11,14 @@
                 </div>
                 {{-- <p class="card-description"><a href="#" class="btn btn-success text-white btn-sm"><i class="mdi mdi-plus"></i> Add Student</a> 
                  --}}
-                <p class="card-description">Add Subject:
-                    <a href=" {{ route('admin.students.create') }}"> Form input</a>
+                <p class="card-description">Create Student:
+                    <a href=" {{ route('admin.students.create') }}">Add Form</a>
                 </p>
                 </p>
                 {{-- Form Search --}}
                 <form action="{{ route('admin.students.index') }}" class="d-flex col-md-4">
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Search data student"
+                        <input type="text" name="search" class="form-control" placeholder="Search student data..."
                             id="searchInput" value="{{ request('search') }}">
                         <button class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
                     </div>
@@ -30,10 +30,10 @@
                             <tr>
                                 <th>No</th>
                                 <th> Name </th>
-                                <th> Level Class </th>
+                                <th> Class Level </th>
                                 <th> Religion </th>
                                 <th> Gender </th>
-                                <th> Year Academy </th>
+                                <th> Academic Year </th>
                                 <th>Parent</th>
                                 <th> Mentor </th>
                                 <th>Address</th>
@@ -63,7 +63,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit"
-                                                onclick="return confirm('Are sure delete this student data {{ $st->name_student }}?')"
+                                                onclick="return confirm('Are you sure you want to delete student {{ $st->name_student }}?')"
                                                 class="btn btn-danger text-white"><i class="fa fa-trash-alt"></i>
                                                 Delete
                                             </button>
@@ -72,7 +72,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5">No data available</td>
+                                    <td colspan="11" class="text-center">No students found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

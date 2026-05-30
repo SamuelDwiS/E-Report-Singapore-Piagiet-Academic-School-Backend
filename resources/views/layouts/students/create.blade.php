@@ -40,8 +40,8 @@
                     <div id="student-forms-container">
                         <!-- Single Student Block -->
                         <div class="student-block border p-3 mb-3 position-relative rounded">
-                            <h5 class="mb-3 student-title">Data Siswa 1</h5>
-                            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2 remove-student-btn" style="display: none;"><i class="fa fa-times"></i> Hapus</button>
+                            <h5 class="mb-3 student-title">Student Data 1</h5>
+                            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2 remove-student-btn" style="display: none;"><i class="fa fa-times"></i> Remove</button>
                             
                             <div class="row">
                                 <div class="col-md-6 form-group">
@@ -54,9 +54,9 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <label>Level Class</label>
+                                    <label>Class Level</label>
                                     <select class="form-select" name="level_class[]" required>
-                                        <option value="">Select Level Class</option>
+                                        <option value="">Select Class Level</option>
                                         @foreach ($level_classes as $class)
                                             <option value="{{ $class->level_class }}">{{ $class->level_class }}</option>
                                         @endforeach
@@ -70,8 +70,8 @@
                                     <input type="text" class="form-control" name="nis[]" placeholder="NIS" required>
                                 </div>
                                 <div class="col-md-3 form-group">
-                                    <label>Name Student</label>
-                                    <input type="text" class="form-control" name="name_student[]" placeholder="Name Student" required>
+                                    <label>Student Name</label>
+                                    <input type="text" class="form-control" name="name_student[]" placeholder="Student Name" required>
                                 </div>
                                 <div class="col-md-3 form-group">
                                     <label>Gender</label>
@@ -107,7 +107,7 @@
 
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <button type="button" class="btn btn-success" id="add-student-btn">
-                            <i class="fa fa-plus"></i> Tambah Form Siswa
+                            <i class="fa fa-plus"></i> Add Student Form
                         </button>
                     </div>
 
@@ -138,7 +138,7 @@
             function updateTitlesAndButtons() {
                 const blocks = container.querySelectorAll('.student-block');
                 blocks.forEach((block, index) => {
-                    block.querySelector('.student-title').textContent = 'Data Siswa ' + (index + 1);
+                    block.querySelector('.student-title').textContent = 'Student Data ' + (index + 1);
                     
                     // logic show button delete if more than 1 form
                     const removeBtn = block.querySelector('.remove-student-btn');

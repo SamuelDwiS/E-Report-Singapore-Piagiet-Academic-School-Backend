@@ -6,8 +6,8 @@
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div>
-                    <h3 class="fw-bold mb-0">Subject Detail</h3>
-                    <p class="text-muted mb-0">Informasi lengkap kriteria penilaian subject</p>
+                    <h3 class="fw-bold mb-0">Subject Details</h3>
+                    <p class="text-muted mb-0">Complete details of subject assessment criteria</p>
                 </div>
                 <a href="{{ route('admin.subjects.index') }}" class="text-dark text-decoration-none" title="Back to List">
                     <i class="mdi mdi-arrow-left"></i> Subjects
@@ -21,7 +21,7 @@
                     <h5 class="fw-bold">{{ $subject->category_subject }}</h5>
                 </div>
                 <div class="col-md-4">
-                    <label class="text-muted small fw-bold">Year / Class</label>
+                    <label class="text-muted small fw-bold">Class Level</label>
                     <h5 class="fw-bold">{{ $subject->level_class }}</h5>
                 </div>
                 <div class="col-md-4">
@@ -33,14 +33,14 @@
             <hr class="my-4">
 
             {{-- Rubrics Table --}}
-            <h5 class="fw-bold mb-3">Assessment Rubrics (Item Penilaian)</h5>
+            <h5 class="fw-bold mb-3">Assessment Rubrics</h5>
             <div class="table-responsive">
                 <table class="table table-striped text-center">
                     <thead>
                         <tr>
                             <th width="50">No</th>
-                            <th>Rubric namespace</th>
-                            <th>Teacher In Charge</th>
+                            <th>Rubric Category</th>
+                            <th>Teacher in Charge</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,7 +73,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="3" class="text-center text-muted py-4">Belum ada rubrik penilaian untuk subject ini.</td>
+                                <td colspan="3" class="text-center text-muted py-4">No assessment rubrics have been defined for this subject.</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -82,7 +82,7 @@
 
             <div class="mt-4 pt-3 border-top d-flex gap-2">
                 <a href="{{ route('admin.subjects.edit', $subject->subject_id) }}" class="btn btn-warning text-white px-4">
-                    <i class="fa fa-edit me-1"></i> Edit Data
+                    <i class="fa fa-edit me-1"></i> Edit Subject
                 </a>
             </div>
         </div>

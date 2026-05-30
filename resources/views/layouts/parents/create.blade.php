@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="card-title">Parent Form Input</h4>
+                    <h4 class="card-title">Create Parent</h4>
                     <a href="{{ route('admin.parents.index') }}" class="text-dark text-decoration-none" title="Back to List">
                         <i class="mdi mdi-arrow-left"></i> Parents
                     </a>
@@ -41,16 +41,16 @@
                         <h5 class="mb-3">New Account Information</h5>
                         <div class="row">
                             <div class="col-md-4 form-group">
-                                <label for="username">Username Baru</label>
-                                <input type="text" name="username" class="form-control" id="username" placeholder="Username" value="{{ old('username') }}">
+                                 <label for="username">New Username</label>
+                                 <input type="text" name="username" class="form-control" id="username" placeholder="Username" value="{{ old('username') }}">
                             </div>
                             <div class="col-md-4 form-group">
-                                <label for="email">Email Baru</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="email@example.com" value="{{ old('email') }}">
+                                 <label for="email">New Email</label>
+                                 <input type="email" name="email" class="form-control" id="email" placeholder="email@example.com" value="{{ old('email') }}">
                             </div>
                             <div class="col-md-4 form-group">
-                                <label for="password">Password Baru</label>
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Min. 8 Chars">
+                                 <label for="password">New Password</label>
+                                 <input type="password" name="password" class="form-control" id="password" placeholder="Min. 8 Chars">
                             </div>
                         </div>
                     </div>
@@ -105,9 +105,9 @@
                                 </select>
                             </div>
                             <div class="col-md-4 form-group">
-                                <label for="level_class">Level Class</label>
+                                <label for="level_class">Class Level</label>
                                 <select name="class_id" class="form-select" id="level_class">
-                                    <option value="">-- Select Class --</option>
+                                    <option value="">-- Select Class Level --</option>
                                     @foreach($level_classes as $lc)
                                         <option value="{{ $lc->class_id }}" {{ old('class_id') == $lc->class_id ? 'selected' : '' }}>{{ $lc->level_class }}</option>
                                     @endforeach

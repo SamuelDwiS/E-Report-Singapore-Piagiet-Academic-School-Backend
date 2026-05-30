@@ -10,14 +10,14 @@
                     </a>
                 </div>
 
-                <p class="card-description">Add Teacher:
-                    <a href="{{ route('admin.teachers.create') }}"> Form input</a>
+                <p class="card-description">Create Teacher:
+                    <a href="{{ route('admin.teachers.create') }}">Add Form</a>
                 </p>
 
                 {{-- Form Search --}}
                 <form action="{{ route('admin.teachers.index') }}" class="d-flex col-md-4">
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Search data teacher"
+                        <input type="text" name="search" class="form-control" placeholder="Search teachers..."
                             id="searchInput" value="{{ request('search') }}">
                         <button class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
                     </div>
@@ -61,7 +61,7 @@
                                                 class="btn btn-warning text-white"> Edit</a>
                                             <form action="{{ route('admin.teachers.destroy', $teacher->teacher_id) }}"
                                                 method="POST" class="d-inline"
-                                                onsubmit="return confirm('Are you sure you want to delete this teacher {{ $teacher->name }}?')">
+                                                onsubmit="return confirm('Are you sure you want to delete teacher {{ $teacher->name }}?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger text-white">

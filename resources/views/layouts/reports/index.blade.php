@@ -26,7 +26,7 @@
                             <tr>
                                 <th>No</th>
                                 <th> Academic Year </th>
-                                <th> Level Class </th>
+                                <th> Class Level </th>
                                 <th> Actions </th>
                             </tr>
                         </thead>

@@ -6,17 +6,17 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item nav-category">Management Reports</li>
+        <li class="nav-item nav-category">Report Management</li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
                 aria-controls="form-elements">
                 <i class="menu-icon mdi mdi-file-document"></i>
-                <span class="menu-title">Report</span>
+                <span class="menu-title">Reports</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.reports.index')}}">List Report</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.reports.index')}}">List Reports</a>
                     </li>
                 </ul>
             </div>
@@ -32,8 +32,8 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.mentors.create')}}">Add Mentor</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.mentors.index') }}">List Mentor</a>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.mentors.setClass') }}">Set Mentor Of Class</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.mentors.index') }}">List Mentors</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.mentors.setClass') }}">Assign Class Mentors</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +49,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.students.create') }}">Add Student</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.students.index') }}">List Student</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.students.index') }}">List Students</a>
                     </li>
                 </ul>
             </div>
@@ -65,7 +65,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.teachers.create')}}">Add Teacher</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.teachers.index') }}">List Teacher</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.teachers.index') }}">List Teachers</a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +81,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.parents.create')}}">Add Parent</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.parents.index') }}">List Parent</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.parents.index') }}">List Parents</a>
                     </li>
                 </ul>
             </div>
@@ -97,7 +97,7 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.subjects.create')}}">Add Subject</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.subjects.index') }}">List Subject</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.subjects.index') }}">List Subjects</a>
                     </li>
                 </ul>
             </div>
@@ -105,11 +105,11 @@
         
        
         
-        <li class="nav-item nav-category">Management Users</li>
+        <li class="nav-item nav-category">User Management</li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="menu-icon mdi mdi-account-circle-outline"></i>
-                <span class="menu-title">User Account</span>
+                <span class="menu-title">User Accounts</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">

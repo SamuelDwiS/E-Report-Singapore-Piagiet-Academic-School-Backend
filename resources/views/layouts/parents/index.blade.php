@@ -10,8 +10,8 @@
                     </a>
                 </div>
 
-                <p class="card-description">Add Parent:
-                    <a href="{{ route('admin.parents.create') }}"> Form input</a>
+                <p class="card-description">Create Parent:
+                    <a href="{{ route('admin.parents.create') }}">Add Form</a>
                 </p>
 
                 @if (session('success'))
@@ -54,7 +54,7 @@
                                                 class="btn btn-warning text-white"> Edit</a>
                                             <form action="{{ route('admin.parents.destroy', $parent->parent_id) }}"
                                                 method="POST" class="d-inline"
-                                                onsubmit="return confirm('Are you sure you want to delete this parent data ? {{ $parent?->name_parent }}?')">
+                                                onsubmit="return confirm('Are you sure you want to delete parent {{ $parent?->name_parent }}?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger text-white">

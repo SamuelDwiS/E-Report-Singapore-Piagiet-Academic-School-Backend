@@ -4,12 +4,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="card-title">Set Mentor Class</h4>
+                    <h4 class="card-title">Assign Class Mentor</h4>
                     <a href="{{ route('admin.mentors.index') }}" class="text-dark text-decoration-none" title="Back to List">
                         <i class="mdi mdi-arrow-left"></i> Mentors
                     </a>
                 </div>
-                <p class="card-description"> Set Mentor to a Class </p>
+                <p class="card-description"> Assign Mentor to Class Level </p>
                 
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -50,7 +50,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-primary me-2">Update Mentor</button>
+                    <button type="submit" class="btn btn-primary me-2">Assign Mentor</button>
                     <a href="{{ route('admin.mentors.index') }}" class="btn btn-light">Cancel</a>
                 </form>
             </div>

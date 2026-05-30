@@ -35,7 +35,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Level Class</label>
+                            <label>Class Level</label>
                             <select class="form-select" name="level_class" required>
                                 @foreach ($level_classes as $class)
                                     <option value="{{ $class->level_class }}" {{ $data->level_class == $class->level_class ? 'selected' : '' }}>{{ $class->level_class }}</option>
@@ -50,7 +50,7 @@
                             <input type="text" class="form-control" name="nis" value="{{ $data->nis }}" required>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Name Student</label>
+                            <label>Student Name</label>
                             <input type="text" class="form-control" name="name_student" value="{{ $data->name_student }}" required>
                         </div>
                         <div class="col-md-3 form-group">

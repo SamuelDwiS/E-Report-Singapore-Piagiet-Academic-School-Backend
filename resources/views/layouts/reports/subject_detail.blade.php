@@ -88,7 +88,7 @@
                     <div class="col-md-6 d-flex flex-column align-items-center justify-content-end pb-3">
                         <p class="mb-5 uppercase font-weight-bold">Teacher:</p>
                         <p class="mb-0 font-weight-bold border-bottom border-dark px-5">
-                            {{ $report->subject->teacher->name ?? 's' }}
+                            {{ $report->subject->teacher->name ?? '-' }}
                         </p>
                     </div>
                 </div>

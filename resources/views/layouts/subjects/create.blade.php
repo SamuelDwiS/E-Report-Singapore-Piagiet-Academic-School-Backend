@@ -83,12 +83,12 @@
                             <div class="card-body bg-white">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="badge bg-secondary rubric-number">Rubric {{ $rIndex + 1 }}</span>
-                                    <button type="button" class="btn btn-danger btn-sm remove-rubric">Hapus Rubrik</button>
+                                    <button type="button" class="btn btn-danger btn-sm remove-rubric">Delete Rubric</button>
                                 </div>
                                 <div class="row mb-4">
                                     <div class="col-md-8 form-group">
-                                        <label class="small fw-bold mb-2">Category Name / Judul Rubrik</label>
-                                        <input type="text" name="rubrics[{{ $rIndex }}][name]" value="{{ $rData['name'] }}" class="form-control" placeholder="Contoh: Reading & Writing" required>
+                                        <label class="small fw-bold mb-2">Category Name</label>
+                                        <input type="text" name="rubrics[{{ $rIndex }}][name]" value="{{ $rData['name'] }}" class="form-control" placeholder="e.g., Reading & Writing" required>
                                     </div>
                                     <div class="col-md-4 form-group teacher-assign-container">
                                         <label class="small fw-bold mb-2">Assign to Teacher</label>
@@ -106,16 +106,16 @@
                                 <div class="ms-4 p-3 border-start border-4 border-primary bg-light rounded">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
                                         <h6 class="fw-bold mb-0 text-primary uppercase text-xs tracking-widest">
-                                            <i class="fa fa-list-ul me-1"></i> List Kriteria (Sub-Items)
+                                            <i class="fa fa-list-ul me-1"></i> Criteria List (Sub-Items)
                                         </h6>
                                         <button type="button" class="btn btn-outline-primary btn-xs add-criteria" data-rubric-index="{{ $rIndex }}">
-                                            <i class="fa fa-plus me-1"></i> Tambah Kriteria
+                                            <i class="fa fa-plus me-1"></i> Add Criteria
                                         </button>
                                     </div>
                                     <div class="criteria-container" data-rubric-index="{{ $rIndex }}">
                                         @foreach($rData['criteria'] as $cIndex => $cData)
                                             <div class="criteria-item mb-2 d-flex gap-2">
-                                                <input type="text" name="rubrics[{{ $rIndex }}][criteria][{{ $cIndex }}][name]" value="{{ $cData['name'] }}" class="form-control form-control-sm" placeholder="Contoh: Item Kriteria" required>
+                                                <input type="text" name="rubrics[{{ $rIndex }}][criteria][{{ $cIndex }}][name]" value="{{ $cData['name'] }}" class="form-control form-control-sm" placeholder="e.g., Reading Comprehension" required>
                                                 <button type="button" class="btn btn-outline-danger btn-sm remove-criteria"><i class="fa fa-times"></i></button>
                                             </div>
                                         @endforeach
@@ -127,8 +127,8 @@
                 </div>
 
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-success me-2 px-4 py-2 fw-bold">Simpan Semua Data</button>
-                    <a href="{{ route('admin.subjects.index') }}" class="btn btn-light border px-4 py-2">Batal</a>
+                    <button type="submit" class="btn btn-success me-2 px-4 py-2 fw-bold">Save All Data</button>
+                    <a href="{{ route('admin.subjects.index') }}" class="btn btn-light border px-4 py-2">Cancel</a>
                 </div>
             </form>
         </div>
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>`).join('')
             : `
                 <div class="criteria-item mb-2 d-flex gap-2">
-                    <input type="text" name="rubrics[${index}][criteria][0][name]" class="form-control form-control-sm" placeholder="Contoh: Kriteria Baru" required>
+                    <input type="text" name="rubrics[${index}][criteria][0][name]" class="form-control form-control-sm" placeholder="e.g., New Criteria" required>
                     <button type="button" class="btn btn-outline-danger btn-sm remove-criteria"><i class="fa fa-times"></i></button>
                 </div>`;
 
@@ -184,12 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="card-body bg-white">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <span class="badge bg-secondary rubric-number">Rubric ${rubricCount}</span>
-                    <button type="button" class="btn btn-danger btn-sm remove-rubric">Hapus Rubrik</button>
+                    <button type="button" class="btn btn-danger btn-sm remove-rubric">Delete Rubric</button>
                 </div>
                 <div class="row mb-4">
                     <div class="col-md-8 form-group">
-                        <label class="small fw-bold mb-2">Category Name / Judul Rubrik</label>
-                        <input type="text" name="rubrics[${index}][name]" class="form-control" value="${rubricName}" placeholder="Contoh: Category Baru" required>
+                        <label class="small fw-bold mb-2">Category Name</label>
+                        <input type="text" name="rubrics[${index}][name]" class="form-control" value="${rubricName}" placeholder="e.g., New Category" required>
                     </div>
                     <div class="col-md-4 form-group teacher-assign-container" style="display: ${teacherDisplay}">
                         <label class="small fw-bold mb-2">Assign to Teacher</label>
@@ -201,10 +201,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         </select>
                     </div>
                     <div class="col-md-4 form-group mentor-info-container" style="display: ${teacherDisplay === 'none' ? 'block' : 'none'}">
-                        <label class="small fw-bold mb-2">Pengampu</label>
+                        <label class="small fw-bold mb-2">Teaching Assignment</label>
                         <div class="d-flex align-items-center gap-2 p-2 bg-info bg-opacity-10 border border-info rounded">
                             <i class="fa fa-info-circle text-info"></i>
-                            <span class="small text-info fw-semibold">Guru agama akan ditugaskan via tombol <strong>"Assign Guru"</strong> setelah disimpan</span>
+                            <span class="small text-info fw-semibold">Religious studies teachers will be assigned via the <strong>"Assign Teachers"</strong> action after saving.</span>
                         </div>
                     </div>
                 </div>
@@ -212,10 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="ms-4 p-3 border-start border-4 border-primary bg-light rounded">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h6 class="fw-bold mb-0 text-primary uppercase text-xs tracking-widest">
-                            <i class="fa fa-list-ul me-1"></i> List Kriteria (Sub-Items)
+                            <i class="fa fa-list-ul me-1"></i> Criteria List (Sub-Items)
                         </h6>
                         <button type="button" class="btn btn-outline-primary btn-xs add-criteria" data-rubric-index="${index}">
-                            <i class="fa fa-plus me-1"></i> Tambah Kriteria
+                            <i class="fa fa-plus me-1"></i> Add Criteria
                         </button>
                     </div>
                     <div class="criteria-container" data-rubric-index="${index}">
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isGroupedRS) {
             // Confirm with user if they want to clear existing rubrics
             if (document.querySelectorAll('.rubric-item').length > 0 && 
-                !confirm('Memilih kategori ini akan menghapus rubrik yang sudah Anda isi dan menggantinya dengan template otomatis. Lanjutkan?')) {
+                !confirm('Selecting this category will clear all currently entered rubrics and replace them with the default template. Do you wish to continue?')) {
                 return;
             }
 
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.target.closest('.rubric-item').remove();
                 updateRubricNumbers();
             } else {
-                alert('Minimal harus ada satu kategori rubrik.');
+                alert('At least one rubric category is required.');
             }
         }
 
@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const newCriteria = document.createElement('div');
             newCriteria.className = 'criteria-item mb-2 d-flex gap-2';
             newCriteria.innerHTML = `
-                <input type="text" name="rubrics[${rubricIndex}][criteria][${criteriaCount}][name]" class="form-control form-control-sm" placeholder="Kriteria Selanjutnya..." required>
+                <input type="text" name="rubrics[${rubricIndex}][criteria][${criteriaCount}][name]" class="form-control form-control-sm" placeholder="Next Criteria..." required>
                 <button type="button" class="btn btn-outline-danger btn-sm remove-criteria"><i class="fa fa-times"></i></button>
             `;
             criteriaContainer.appendChild(newCriteria);
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.remove();
                 reindexCriteria(container);
             } else {
-                alert('Setiap rubrik harus memiliki minimal satu kriteria.');
+                alert('Each rubric must have at least one criteria.');
             }
         }
     });

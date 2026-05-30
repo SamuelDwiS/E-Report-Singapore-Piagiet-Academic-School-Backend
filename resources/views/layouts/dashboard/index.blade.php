@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-    <h1 class="welcome-text"><span class="text-black fw-bold">Dashboard Admin</span></h1>
+    <h1 class="welcome-text"><span class="text-black fw-bold">Admin Dashboard</span></h1>
     <div class="d-sm-flex align-items-center justify-content-between border-bottom">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">

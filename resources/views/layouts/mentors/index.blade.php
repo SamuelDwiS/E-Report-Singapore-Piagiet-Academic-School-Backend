@@ -9,13 +9,13 @@
                         <i class="mdi mdi-arrow-left"></i> Dashboard
                     </a>
                 </div>
-                <p class="card-description"> Add Subject:
-                    <a href="{{ route('admin.mentors.create') }}">Form input</a>
+                <p class="card-description">Create Mentor:
+                    <a href="{{ route('admin.mentors.create') }}">Add Form</a>
                 </p>
                 {{-- Form Search --}}
                 <form action="{{ route('admin.mentors.index') }}" class="d-flex col-md-4">
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Search data mentor"
+                        <input type="text" name="search" class="form-control" placeholder="Search mentors..."
                             id="searchInput" value="{{ request('search') }}">
                         <button class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
                     </div>
@@ -30,11 +30,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th> Name Mentor</th>
+                                <th> Mentor Name </th>
                                 <th> Email </th>
                                 <th>Phone Number</th>
-                                <th>Mentor of</th>
-                                <th> Action </th>
+                                <th> Assigned Class Level </th>
+                                <th> Actions </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,7 +57,7 @@
                                                 class="btn btn-warning text-white">Edit</a>
                                             <form action="{{ route('admin.mentors.destroy', $mentor->mentor_id) }}"
                                                 method="POST"
-                                                onsubmit="return confirm('Delete this mentor? {{ $mentor->name }}')">
+                                                onsubmit="return confirm('Are you sure you want to delete mentor {{ $mentor->name_mentor }}?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger text-white">Delete</button>
@@ -67,7 +67,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5">No data available</td>
+                                    <td colspan="6" class="text-center">No mentors found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

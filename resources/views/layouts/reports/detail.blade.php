@@ -58,7 +58,7 @@
                                         <span class="font-weight-bold">{{ $item->subject->category_subject ?? 'N/A' }}</span>
                                     </td>
                                     <td class="text-center">
-                                        <h5 class="mb-0 {{ $item->average_value >= 75 ? 'text-success' : 'text-danger' }}">
+                                        <h5 class="mb-0 {{ $item->average_value >= 2.5 ? 'text-success' : 'text-warning' }}">
                                             {{ number_format($item->average_value, 1) }}
                                         </h5>
                                     </td>

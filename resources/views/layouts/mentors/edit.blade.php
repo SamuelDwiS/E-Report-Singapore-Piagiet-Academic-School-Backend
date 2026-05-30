@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name_mentor">Name Mentor</label>
+                        <label for="name_mentor">Mentor Name</label>
                         <input type="text" name="name_mentor" class="form-control" id="name_mentor" placeholder="Mentor Name" value="{{ old('name_mentor') ?? $mentor->name_mentor }}" required>
                     </div>
 

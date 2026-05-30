@@ -9,8 +9,8 @@
                         <i class="mdi mdi-arrow-left"></i> Dashboard
                     </a>
                 </div>
-                <p class="card-description"> Add Subject:
-                    <a href="{{ route('admin.subjects.create') }}">Form input</a>
+                <p class="card-description"> Create Subject:
+                    <a href="{{ route('admin.subjects.create') }}">Add Form</a>
                 </p>
 
                 @if (session('success'))
@@ -29,10 +29,10 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th> Subjects </th>
-                                <th> Year </th>
+                                <th> Subject Category </th>
+                                <th> Class Level </th>
                                 <th> Term </th>
-                                <th> Detail Rubric</th>
+                                <th> Rubrics </th>
                                 <th> Actions </th>
                             </tr>
                         </thead>
@@ -46,7 +46,7 @@
                                     <td class="text-center align-middle">
                                         <div class="d-flex justify-content-center gap-2">
                                             <a href="{{ route('admin.subjects.show', $subject->subject_id) }}"
-                                                class="btn btn-primary text-white">Detail</a>
+                                                class="btn btn-primary text-white">View Rubrics</a>
                                         </div>
                                     </td>
                                     <td>
@@ -54,8 +54,8 @@
                                             @if ($subject->report_group_key)
                                                 {{-- Grouped RS/PKN: Tombol Assign Guru --}}
                                                 <a href="{{ route('admin.subjects.assignTeachers', $subject->subject_id) }}"
-                                                    class="btn btn-info text-white" title="Assign Guru Agama & PKN">
-                                                    <i class="fa fa-users"></i> Assign Guru
+                                                    class="btn btn-info text-white" title="Assign Religion & PKN Teachers">
+                                                    <i class="fa fa-users"></i> Assign Teachers
                                                 </a>
                                             @else
                                                 {{-- Standard: Tombol Edit biasa --}}
@@ -65,7 +65,7 @@
 
                                             <form action="{{ route('admin.subjects.destroy', $subject->subject_id) }}"
                                                 method="POST"
-                                                onsubmit="return confirm('Delete this subject {{ $subject->category_subject }}?')">
+                                                onsubmit="return confirm('Are you sure you want to delete the subject \'{{ $subject->category_subject }}\'?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger text-white">Delete</button>
@@ -75,7 +75,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6">No data available</td>
+                                    <td colspan="6" class="text-center">No subjects found.</td>
                                 </tr>
                             @endforelse
                         </tbody>
